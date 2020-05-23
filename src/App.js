@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { hot } from 'react-hot-loader'
 
 const characterDict = [
@@ -67,37 +67,23 @@ const characterDict = [
  '-': 'ㄦ'
  */
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
+function getRandomCharacterFromDict() {
+  return characterDict[Math.floor(Math.random() * characterDict.length)]
+}
 
-    this.state = {
-      randomCharacter: {},
-    }
+function App() {
+  const [randomCharacter, setRandomCharacter] = useState({})
 
-    this.updateRandomCharacter = this.updateRandomCharacter.bind(this)
-  }
-
-  getRandomCharacterFromDict() {
-    return characterDict[Math.floor(Math.random() * characterDict.length)]
-  }
-
-  updateRandomCharacter() {
-    this.setState({ randomCharacter: this.getRandomCharacterFromDict() })
-  }
-
-  render() {
-    return (
-      <main>
-        <h1>ㄅㄆㄇㄈ/注音 Trainer</h1>
-        <button onClick={this.updateRandomCharacter}>
-          Get random character
-        </button>
-        <p>Random character: {this.state.randomCharacter.character}</p>
-        <p>Reading: {this.state.randomCharacter.reading}</p>
-      </main>
-    )
-  }
+  return (
+    <main>
+      <h1>ㄅㄆㄇㄈ/注音 Trainer</h1>
+      <button onClick={() => setRandomCharacter(getRandomCharacterFromDict())}>
+        Get random character
+      </button>
+      <p>Random character: {randomCharacter.character}</p>
+      <p>Reading: {randomCharacter.reading}</p>
+    </main>
+  )
 }
 
 export default hot(module)(App)
