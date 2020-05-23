@@ -191,16 +191,58 @@ export const characterDict = [
     reading: 'e^',
     key: ',',
   },
+  {
+    id: 33,
+    character: 'ㄞ',
+    reading: 'ai',
+    key: '9',
+  },
+  {
+    id: 34,
+    character: 'ㄟ',
+    reading: 'ei',
+    key: 'o',
+  },
+  {
+    id: 35,
+    character: 'ㄠ',
+    reading: 'au',
+    key: 'l',
+  },
+  {
+    id: 36,
+    character: 'ㄡ',
+    reading: 'ou',
+    key: '.',
+  },
+  {
+    id: 37,
+    character: 'ㄢ',
+    reading: 'an',
+    key: '0',
+  },
+  {
+    id: 38,
+    character: 'ㄣ',
+    reading: 'en',
+    key: 'p',
+  },
+  {
+    id: 39,
+    character: 'ㄤ',
+    reading: 'ang',
+    key: ';',
+  },
+  {
+    id: 40,
+    character: 'ㄥ',
+    reading: 'eng',
+    key: '/',
+  },
+  {
+    id: 41,
+    character: 'ㄦ',
+    reading: 'er',
+    key: '-',
+  },
 ]
-
-/* 
- '9': 'ㄞ',
- 'o': 'ㄟ',
- 'l': 'ㄠ',
- '.': 'ㄡ',
- '0': 'ㄢ',
- 'p': 'ㄣ',
- ';': 'ㄤ',
- '/': 'ㄥ',
- '-': 'ㄦ'
- */
