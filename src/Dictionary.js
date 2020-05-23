@@ -258,7 +258,3 @@ export function getRandomCharacterFromDictExcept(except) {
   }
   return randomCharacterFromDict
 }
-
-function getCharacterByKey(key) {
-  return characterDict.find((element) => element.key === key)
-}
