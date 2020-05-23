@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { hot } from 'react-hot-loader'
 
 import {
@@ -7,6 +7,10 @@ import {
 } from './Dictionary'
 
 function App() {
+  useEffect(() => {
+    setRandomCharacter(getRandomCharacterFromDict())
+  }, [])
+
   const [randomCharacter, setRandomCharacter] = useState({})
 
   function handleKeyInput(event) {
@@ -27,7 +31,10 @@ function App() {
       <p>Reading: {randomCharacter.reading}</p>
       <p>Key: {randomCharacter.key}</p>
 
-      <input onChange={(event) => handleKeyInput(event)}></input>
+      <label htmlFor="keyInput">
+        Input the key corresponding to {randomCharacter.character}:
+      </label>
+      <input id="keyInput" onChange={(event) => handleKeyInput(event)}></input>
     </main>
   )
 }
