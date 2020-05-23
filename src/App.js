@@ -8,17 +8,17 @@ const characterDict = [
     reading: 'b',
   },
   {
-    id: 1,
+    id: 2,
     character: 'ㄆ',
     reading: 'p',
   },
   {
-    id: 1,
+    id: 3,
     character: 'ㄇ',
     reading: 'm',
   },
   {
-    id: 1,
+    id: 4,
     character: 'ㄈ',
     reading: 'f',
   },
