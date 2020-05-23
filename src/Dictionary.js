@@ -246,3 +246,19 @@ export const characterDict = [
     key: '-',
   },
 ]
+
+export function getRandomCharacterFromDict() {
+  return characterDict[Math.floor(Math.random() * characterDict.length)]
+}
+
+export function getRandomCharacterFromDictExcept(except) {
+  var randomCharacterFromDict = getRandomCharacterFromDict()
+  if (randomCharacterFromDict === except) {
+    randomCharacterFromDict = getRandomCharacterFromDictExcept(except)
+  }
+  return randomCharacterFromDict
+}
+
+function getCharacterByKey(key) {
+  return characterDict.find((element) => element.key === key)
+}
