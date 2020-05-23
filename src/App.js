@@ -28,10 +28,7 @@ const characterDict = [
   },
 ]
 
-/* 'ㄅ': { "character": '1', "reading": "" },
- 'q': 'ㄆ',
- 'a': 'ㄇ',
- 'z': 'ㄈ',
+/*
  '2': 'ㄉ',
  'w': 'ㄊ',
  's': 'ㄋ',
@@ -67,8 +64,8 @@ const characterDict = [
  'p': 'ㄣ',
  ';': 'ㄤ',
  '/': 'ㄥ',
- '-': 'ㄦ',
-}*/
+ '-': 'ㄦ'
+ */
 
 class App extends React.Component {
   constructor(props) {
