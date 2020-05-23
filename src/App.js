@@ -1,63 +1,84 @@
 import React from 'react'
 import { hot } from 'react-hot-loader'
 
-const characterDict = {
-  '1': 'ㄅ',
-  q: 'ㄆ',
-  a: 'ㄇ',
-  z: 'ㄈ',
-  '2': 'ㄉ',
-  w: 'ㄊ',
-  s: 'ㄋ',
-  x: 'ㄌ',
-  '3': 'ˇ',
-  e: 'ㄍ',
-  d: 'ㄎ',
-  c: 'ㄏ',
-  '4': 'ˋ',
-  r: 'ㄐ',
-  f: 'ㄑ',
-  v: 'ㄒ',
-  '5': 'ㄓ',
-  t: 'ㄔ',
-  g: 'ㄕ',
-  b: 'ㄖ',
-  '6': 'ˊ',
-  y: 'ㄗ',
-  h: 'ㄘ',
-  n: 'ㄙ',
-  '7': '˙',
-  u: 'ㄧ',
-  j: 'ㄨ',
-  m: 'ㄩ',
-  '8': 'ㄚ',
-  i: 'ㄛ',
-  k: 'ㄜ',
-  '9': 'ㄞ',
-  o: 'ㄟ',
-  l: 'ㄠ',
-  '.': 'ㄡ',
-  '0': 'ㄢ',
-  p: 'ㄣ',
-  ';': 'ㄤ',
-  '/': 'ㄥ',
-  '-': 'ㄦ',
-}
+const characterDict = [
+  {
+    id: 1,
+    character: 'ㄅ',
+    reading: 'b',
+  },
+  {
+    id: 1,
+    character: 'ㄆ',
+    reading: 'p',
+  },
+  {
+    id: 1,
+    character: 'ㄇ',
+    reading: 'm',
+  },
+  {
+    id: 1,
+    character: 'ㄈ',
+    reading: 'f',
+  },
+]
+
+/* 'ㄅ': { "character": '1', "reading": "" },
+ 'q': 'ㄆ',
+ 'a': 'ㄇ',
+ 'z': 'ㄈ',
+ '2': 'ㄉ',
+ 'w': 'ㄊ',
+ 's': 'ㄋ',
+ 'x': 'ㄌ',
+ '3': 'ˇ',
+ 'e': 'ㄍ',
+ 'd': 'ㄎ',
+ 'c': 'ㄏ',
+ '4': 'ˋ',
+ 'r': 'ㄐ',
+ 'f': 'ㄑ',
+ 'v': 'ㄒ',
+ '5': 'ㄓ',
+ 't': 'ㄔ',
+ 'g': 'ㄕ',
+ 'b': 'ㄖ',
+ '6': 'ˊ',
+ 'y': 'ㄗ',
+ 'h': 'ㄘ',
+ 'n': 'ㄙ',
+ '7': '˙',
+ 'u': 'ㄧ',
+ 'j': 'ㄨ',
+ 'm': 'ㄩ',
+ '8': 'ㄚ',
+ 'i': 'ㄛ',
+ 'k': 'ㄜ',
+ '9': 'ㄞ',
+ 'o': 'ㄟ',
+ 'l': 'ㄠ',
+ '.': 'ㄡ',
+ '0': 'ㄢ',
+ 'p': 'ㄣ',
+ ';': 'ㄤ',
+ '/': 'ㄥ',
+ '-': 'ㄦ',
+}*/
 
 class App extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      randomCharacter: '',
+      randomCharacter: {},
     }
 
     this.updateRandomCharacter = this.updateRandomCharacter.bind(this)
   }
 
   getRandomCharacterFromDict() {
-    var keys = Object.keys(characterDict)
-    return characterDict[keys[(keys.length * Math.random()) << 0]]
+    return characterDict[Math.floor(Math.random() * characterDict.length)]
   }
 
   updateRandomCharacter() {
@@ -71,7 +92,8 @@ class App extends React.Component {
         <button onClick={this.updateRandomCharacter}>
           Get random character
         </button>
-        <p>{this.state.randomCharacter}</p>
+        <p>Random character: {this.state.randomCharacter.character}</p>
+        <p>Reading: {this.state.randomCharacter.reading}</p>
       </main>
     )
   }
