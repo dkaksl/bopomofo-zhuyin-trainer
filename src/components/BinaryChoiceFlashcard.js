@@ -11,8 +11,11 @@ function BinaryChoiceFlashcard() {
   }, [])
 
   function initializeState() {
-    setRandomCharacter(getRandomCharacterFromDict())
-    setWrongCharacter(getRandomCharacterFromDictExcept(randomCharacter))
+    var randomCharacterFromDict = getRandomCharacterFromDict(true)
+    setRandomCharacter(randomCharacterFromDict)
+    setWrongCharacter(
+      getRandomCharacterFromDictExcept(randomCharacterFromDict, true)
+    )
     setHeads(Math.floor(Math.random() * 2) == 0)
   }
 
