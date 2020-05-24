@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: sans-serif, 'Noto Sans';
 }
 
 *,
@@ -22,6 +22,24 @@ ol,
 ul {
   margin: 0;
   padding: 0;
+  background-color: #2d2d2d;
+  color: #dbe8eb;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+a {
+  color: #35a4ff;
+}
+
+a:visited {
+  color: #81c4f8;
+}
+
+a:hover {
+  color: #378ab3;
 }
 
 ol,
@@ -32,4 +50,49 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.binary-flashcard-container {
+  background-color: #393939;
+  min-height: 400px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 50px;
+  border-radius: 0.5em;
+  margin: 0.5em;
+}
+
+.random-character {
+  font-size: 60px;
+  align-items: center;
+  justify-content: center;
+  margin: 0.1em;
+}
+
+.guess-button-container {
+  align-items: center;
+  justify-content: center;
+}
+
+.guess-button {
+  width: 2em;
+  height: 2em;
+  font-size: 50px;
+  border: 0;
+  background: #4b6a78;
+  color: #fff;
+  box-shadow: none;
+  border-radius: 0px;
+  border-radius: 10%;
+  margin: 0.1em;
 }
