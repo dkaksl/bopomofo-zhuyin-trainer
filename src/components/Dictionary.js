@@ -247,14 +247,28 @@ export const characterDict = [
   },
 ]
 
-export function getRandomCharacterFromDict() {
-  return characterDict[Math.floor(Math.random() * characterDict.length)]
+export function getRandomCharacterFromDict(hasReading) {
+  var randomCharacterFromDict =
+    characterDict[Math.floor(Math.random() * characterDict.length)]
+  if (hasReading && randomCharacterFromDict.reading === '') {
+    randomCharacterFromDict = getRandomCharacterFromDict(hasReading)
+  }
+  return randomCharacterFromDict
 }
 
-export function getRandomCharacterFromDictExcept(except) {
+export function getRandomCharacterFromDictExcept(except, hasReading) {
   var randomCharacterFromDict = getRandomCharacterFromDict()
   if (randomCharacterFromDict === except) {
-    randomCharacterFromDict = getRandomCharacterFromDictExcept(except)
+    randomCharacterFromDict = getRandomCharacterFromDictExcept(
+      except,
+      hasReading
+    )
+  }
+  if (hasReading && randomCharacterFromDict.reading === '') {
+    randomCharacterFromDict = getRandomCharacterFromDictExcept(
+      except,
+      hasReading
+    )
   }
   return randomCharacterFromDict
 }
