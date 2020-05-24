@@ -10,7 +10,7 @@ function App() {
       <Flashcard />
       <BinaryChoiceFlashcard />
       <footer>
-        {String(new Date().getFullYear())} &copy;{' '}
+        {new Date().getFullYear()} &copy;{' '}
         <a
           href="https://amani.kilumanga.com"
           target="_blank"
