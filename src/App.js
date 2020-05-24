@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { hot } from 'react-hot-loader'
-import Flashcard from './components/Flashcard'
+import InputFlashcard from './components/InputFlashcard'
 import BinaryChoiceFlashcard from './components/BinaryChoiceFlashcard'
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         </button>
       </nav>
       <h1>ㄅㄆㄇㄈ／注音 Trainer</h1>
-      {mode === 'input' ? <Flashcard /> : <BinaryChoiceFlashcard />}
+      {mode === 'input' ? <InputFlashcard /> : <BinaryChoiceFlashcard />}
       <footer>
         {new Date().getFullYear()} &copy;{' '}
         <a
