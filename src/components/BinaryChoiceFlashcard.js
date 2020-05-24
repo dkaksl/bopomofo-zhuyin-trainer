@@ -30,22 +30,26 @@ function BinaryChoiceFlashcard() {
   }
 
   return (
-    <div>
-      <div>{randomCharacter.character}</div>
-      <button
-        onClick={() =>
-          handleButtonPress(heads ? randomCharacter : wrongCharacter)
-        }
-      >
-        {heads ? randomCharacter.reading : wrongCharacter.reading}
-      </button>
-      <button
-        onClick={() =>
-          handleButtonPress(!heads ? randomCharacter : wrongCharacter)
-        }
-      >
-        {!heads ? randomCharacter.reading : wrongCharacter.reading}
-      </button>
+    <div className="binary-flashcard-container">
+      <div className="random-character">{randomCharacter.character}</div>
+      <div className="guess-button-container">
+        <button
+          className="guess-button"
+          onClick={() =>
+            handleButtonPress(heads ? randomCharacter : wrongCharacter)
+          }
+        >
+          {heads ? randomCharacter.reading : wrongCharacter.reading}
+        </button>
+        <button
+          className="guess-button"
+          onClick={() =>
+            handleButtonPress(!heads ? randomCharacter : wrongCharacter)
+          }
+        >
+          {!heads ? randomCharacter.reading : wrongCharacter.reading}
+        </button>
+      </div>
     </div>
   )
 }
