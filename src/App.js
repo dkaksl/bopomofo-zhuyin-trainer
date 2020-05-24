@@ -5,10 +5,20 @@ import BinaryChoiceFlashcard from './components/BinaryChoiceFlashcard'
 
 function App() {
   return (
-    <main>
+    <main className="main">
       <h1>ㄅㄆㄇㄈ／注音 Trainer</h1>
       <Flashcard />
       <BinaryChoiceFlashcard />
+      <footer>
+        {String(new Date().getFullYear())} &copy;{' '}
+        <a
+          href="https://amani.kilumanga.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Amani Kilumanga
+        </a>
+      </footer>
     </main>
   )
 }
