@@ -59,6 +59,37 @@ img {
   flex-direction: column;
 }
 
+.nav-buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #3c5560;
+}
+
+.nav-button {
+  width: 10em;
+  height: 3em;
+  font-size: 20px;
+  border: 1px;
+  border-color: transparent;
+  background: #3c5560;
+  color: #fff;
+  box-shadow: none;
+  margin-left: 1px;
+  margin-right: 1px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.nav-button:hover {
+  background: #4b6a78;
+}
+
+.nav-button-active {
+  background: #2b3e46;
+}
+
 .binary-flashcard-container {
   background-color: #393939;
   min-height: 400px;
@@ -89,10 +120,15 @@ img {
   height: 2em;
   font-size: 50px;
   border: 0;
-  background: #4b6a78;
+  background: #3c5560;
   color: #fff;
   box-shadow: none;
-  border-radius: 0px;
   border-radius: 10%;
   margin: 0.1em;
+  outline: none;
+  transition: 0.3s;
+}
+
+.guess-button:hover {
+  background: #4b6a78;
 }
