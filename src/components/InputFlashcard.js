@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import {
   getRandomCharacterFromDict,
   getRandomCharacterFromDictExcept,
 } from './Dictionary'
 
-function Flashcard() {
+function InputFlashcard() {
   useEffect(() => {
+    inputRef.current.focus()
     setRandomCharacter(getRandomCharacterFromDict())
   }, [])
+
+  const inputRef = useRef(null)
 
   const [randomCharacter, setRandomCharacter] = useState({})
 
@@ -21,13 +24,16 @@ function Flashcard() {
   }
 
   return (
-    <div>
-      <label htmlFor="keyInput">
-        Input the key corresponding to {randomCharacter.character}:
-      </label>
-      <input id="keyInput" onChange={(event) => handleKeyInput(event)}></input>
+    <div className="input-flashcard-container">
+      <div className="random-character">{randomCharacter.character}</div>
+      <input
+        id="key-input"
+        className="key-input"
+        ref={inputRef}
+        onChange={(event) => handleKeyInput(event)}
+      ></input>
     </div>
   )
 }
 
-export default Flashcard
+export default InputFlashcard
