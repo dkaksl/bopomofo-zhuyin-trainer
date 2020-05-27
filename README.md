@@ -2,6 +2,8 @@
 
 [Bopomofo/Zhuyin](https://en.wikipedia.org/wiki/Bopomofo) trainer app.
 
+See the app live at [bopomofo.kilumanga.com](https://bopomofo.kilumanga.com) or [zhuyin.kilumanga.com](https://zhuyin.kilumanga.com).
+
 ## One-Time Dev Setup
 
 ```
