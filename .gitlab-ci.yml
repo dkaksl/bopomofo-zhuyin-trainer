@@ -1,0 +1,29 @@
+image: node
+
+before_script:
+  - npm install
+
+stages:
+  - test
+  - build
+
+lint:
+  stage: test
+  except:
+    - merge_requests
+  script:
+    - npm run lint
+
+test:
+  stage: test
+  except:
+    - merge_requests
+  script:
+    - npm run test
+
+build:
+  stage: build
+  only:
+    - master
+  script:
+    - npm run build
