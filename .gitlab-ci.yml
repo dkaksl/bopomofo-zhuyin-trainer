@@ -3,6 +3,10 @@ image: node
 before_script:
   - npm install
 
+stages:
+  - test
+  - build
+
 lint:
   stage: test
   script:
@@ -15,5 +19,7 @@ test:
 
 build:
   stage: build
+  only:
+    - master
   script:
     - npm run build
