@@ -7,18 +7,12 @@ stages:
   - test
   - build
 
-lint:
-  stage: test
-  except:
-    - merge_requests
-  script:
-    - npm run lint
-
 test:
   stage: test
   except:
     - merge_requests
   script:
+    - npm run lint
     - npm run test
 
 build:
