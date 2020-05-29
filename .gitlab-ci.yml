@@ -10,14 +10,14 @@ stages:
 lint:
   stage: test
   except:
-    - merge_request
+    - merge_requests
   script:
     - npm run lint
 
 test:
   stage: test
   except:
-    - merge_request
+    - merge_requests
   script:
     - npm run test
 
