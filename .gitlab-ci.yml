@@ -9,11 +9,15 @@ stages:
 
 lint:
   stage: test
+  except:
+    - merge_request
   script:
     - npm run lint
 
 test:
   stage: test
+  except:
+    - merge_request
   script:
     - npm run test
 
